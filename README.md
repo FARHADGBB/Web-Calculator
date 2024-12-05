@@ -10,6 +10,12 @@ Welcome to the Web Calculator! A sleek, user-friendly online calculator designed
 - 🔲 **Resizable Calculator**: Easily adjust the calculator’s size for the perfect fit on your screen.
 ![Calculator GIF](./other/1.gif)
 
+## Screenshots
+
+![App Screenshot](./other/1.PNG)
+![App Screenshot](./other/2.PNG)
+![App Screenshot](./other/3.PNG)
+
 ## How to Replace the Wallpaper with a Picture
 
 1. **Update the JavaScript code** to use Picture as the background instead of video. Replace the previous background video code with the following code:
