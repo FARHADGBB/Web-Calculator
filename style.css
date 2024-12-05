@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
+    overflow: hidden;
+    transition: background 1s ease;
+    cursor: url('cur/1.cur'), auto;
+}
+
+.calculator-container {
+    width: 300px;
+    height: 400px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    resize: both;
+    min-width: 300px;
+    min-height: 400px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.display {
+    width: 100%;
+    height: 15%;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 20px;
+    text-align: right;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    width: 100%;
+    height: 70%;
+}
+
+.button {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    padding: 15px;
+    font-size: 1.5rem;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+    width: 100%;
+    transition: transform 0.1s ease;
+}
+
+.button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px);
+}
+
+.operator {
+    background-color: rgba(0, 255, 255, 0.3);
+    color: black;
+}
+
+.button:active {
+    transform: scale(0.95);
+}
+
+@keyframes bounce {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+button:focus {
+    animation: bounce 0.2s ease;
+}
+
+#background-video {
+    transition: opacity 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.button:active::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    animation: clickEffect 0.3s ease;
+}
+
+@keyframes clickEffect {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+#resize-handle {
+    width: 15px;
+    height: 15px;
+    background-color: rgba(255, 255, 255, 0.6);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    cursor: se-resize;
+}
+
+.custom-cursor {
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    display: none;
+}
+
+.button, a, .clickable {
+    cursor: url('cur/2.cur'), pointer;
+}
